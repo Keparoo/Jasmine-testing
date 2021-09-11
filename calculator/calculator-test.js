@@ -1,19 +1,19 @@
 it('should calculate the monthly rate correctly', function() {
 	const values = {
-		amount: 10000,
-		years: 8,
-		rate: 5.8
+		amount: 5000,
+		years: 4,
+		rate: 3
 	};
-	expect(calculateMonthlyPayment(values)).toEqual('130.44');
+	expect(calculateMonthlyPayment(values)).toEqual('110.67');
 });
 
 it('should return a result with 2 decimal places', function() {
 	const values = {
-		amount: 10043,
-		years: 8,
-		rate: 5.8
+		amount: 4995,
+		years: 4,
+		rate: 3.2
 	};
-	expect(calculateMonthlyPayment(values)).toEqual('131.00');
+	expect(calculateMonthlyPayment(values)).toEqual('111.00');
 });
 
 it('should return a correct result with 0 interest', function() {
