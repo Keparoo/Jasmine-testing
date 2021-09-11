@@ -1,4 +1,4 @@
-describe('Payments test (with setup and tear-down)', function() {
+describe('Payments test', function() {
 	beforeEach(function() {
 		billAmtInput.value = 50;
 		tipAmtInput.value = 5;

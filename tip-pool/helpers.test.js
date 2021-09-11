@@ -1,4 +1,4 @@
-describe('Helpers test (with setup and tear-down)', function() {
+describe('Helpers test', function() {
 	beforeEach(function() {
 		allPayments = {
 			payment1: {
