@@ -1,4 +1,4 @@
-it('should calculate the monthly rate correctly', function() {
+it('should calculate the monthly rate correctly', () => {
 	const values = {
 		amount: 5000,
 		years: 4,
@@ -7,7 +7,7 @@ it('should calculate the monthly rate correctly', function() {
 	expect(calculateMonthlyPayment(values)).toEqual('110.67');
 });
 
-it('should return a result with 2 decimal places', function() {
+it('should return a result with 2 decimal places', () => {
 	const values = {
 		amount: 4995,
 		years: 4,
@@ -16,7 +16,7 @@ it('should return a result with 2 decimal places', function() {
 	expect(calculateMonthlyPayment(values)).toEqual('111.00');
 });
 
-it('should return a correct result with 0 interest', function() {
+it('should return a correct result with 0 interest', () => {
 	const values = {
 		amount: 100000,
 		years: 20,

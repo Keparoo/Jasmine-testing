@@ -1,10 +1,10 @@
-describe('Payments test', function() {
-	beforeEach(function() {
+describe('Payments test', () => {
+	beforeEach(() => {
 		billAmtInput.value = 50;
 		tipAmtInput.value = 5;
 	});
 
-	it('should submit payment info', function() {
+	it('should submit payment info', () => {
 		submitPaymentInfo();
 
 		expect(allPayments['payment1'].billAmt).toEqual('50');
@@ -13,7 +13,7 @@ describe('Payments test', function() {
 		expect(Object.keys(allPayments).length).toEqual(1);
 	});
 
-	it('should create current payment', function() {
+	it('should create current payment', () => {
 		curPayment = createCurPayment();
 
 		expect(curPayment.billAmt).toEqual('50');
@@ -21,20 +21,20 @@ describe('Payments test', function() {
 		expect(curPayment.tipPercent).toEqual(10);
 	});
 
-	it('should return undefined for empty bill amount', function() {
+	it('should return undefined for empty bill amount', () => {
 		billAmtInput.value = 0;
 		curPayment = createCurPayment();
 
 		expect(curPayment).toEqual(undefined);
 	});
 
-	it('should return undefined for negative bill amount', function() {
+	it('should return undefined for negative bill amount', () => {
 		billAmtInput.value = -1;
 		curPayment = createCurPayment();
 
 		expect(curPayment).toEqual(undefined);
 	});
-	it('should create a payment with a zero tip', function() {
+	it('should create a payment with a zero tip', () => {
 		tipAmtInput.value = 0;
 		curPayment = createCurPayment();
 
@@ -43,7 +43,7 @@ describe('Payments test', function() {
 		expect(curPayment.tipPercent).toEqual(0);
 	});
 
-	it('should append a row to the Payment Table', function() {
+	it('should append a row to the Payment Table', () => {
 		curPayment = createCurPayment();
 		appendPaymentTable(curPayment);
 
@@ -55,7 +55,7 @@ describe('Payments test', function() {
 		expect(paymentList[2].innerText).toEqual('10%');
 	});
 
-	it('should update the Summary Table', function() {
+	it('should update the Summary Table', () => {
 		allPayments = {
 			payment1: {
 				billAmt: '50',
@@ -80,7 +80,7 @@ describe('Payments test', function() {
 		expect(summaryTds[2].innerHTML).toEqual('16%');
 	});
 
-	it('should update the Summary Table correrctly with empty payments table', function() {
+	it('should update the Summary Table correrctly with empty payments table', () => {
 		allPayments = {};
 		updateSummary();
 
@@ -89,7 +89,7 @@ describe('Payments test', function() {
 		expect(summaryTds[2].innerHTML).toEqual('0%');
 	});
 
-	afterEach(function() {
+	afterEach(() => {
 		allPayments = {};
 		billAmtInput.value = '';
 		tipAmtInput.value = '';

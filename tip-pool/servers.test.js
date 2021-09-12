@@ -1,17 +1,17 @@
-describe('Servers test', function() {
-	beforeEach(function() {
+describe('Servers test', () => {
+	beforeEach(() => {
 		// initialization logic
 		serverNameInput.value = 'Alice';
 	});
 
-	it('should add a new server to allServers on submitServerInfo()', function() {
+	it('should add a new server to allServers on submitServerInfo()', () => {
 		submitServerInfo();
 
 		expect(Object.keys(allServers).length).toEqual(1);
 		expect(allServers['server' + serverId].serverName).toEqual('Alice');
 	});
 
-	it('should update table when server is submitted', function() {
+	it('should update table when server is submitted', () => {
 		submitServerInfo();
 
 		let tableList = document.querySelectorAll('#serverTable tbody tr td');
@@ -21,14 +21,14 @@ describe('Servers test', function() {
 		expect(tableList.length).toEqual(2);
 	});
 
-	it('should not update table if name field is empty', function() {
+	it('should not update table if name field is empty', () => {
 		serverNameInput.value = '';
 		submitServerInfo();
 
 		expect(Object.keys(allServers).length).toEqual(0);
 	});
 
-	afterEach(function() {
+	afterEach(() => {
 		serverTbody.innerHTML = '';
 		allServers = {};
 		serverId = 0;

@@ -1,5 +1,5 @@
-describe('Helpers test', function() {
-	beforeEach(function() {
+describe('Helpers test', () => {
+	beforeEach(() => {
 		allPayments = {
 			payment1: {
 				billAmt: '50',
@@ -19,24 +19,24 @@ describe('Helpers test', function() {
 		};
 	});
 
-	it('should sum the billAmt', function() {
+	it('should sum the billAmt', () => {
 		expect(sumPaymentTotal('billAmt')).toEqual(145);
 	});
 
-	it('should sum the tipAmt', function() {
+	it('should sum the tipAmt', () => {
 		expect(sumPaymentTotal('tipAmt')).toEqual(20);
 	});
 
-	it('should sum the tipPercent', function() {
+	it('should sum the tipPercent', () => {
 		expect(sumPaymentTotal('tipPercent')).toEqual(48);
 	});
 
-	it('should calcluate the tip percentage', function() {
+	it('should calcluate the tip percentage', () => {
 		expect(calculateTipPercent(100, 10)).toEqual(10);
 		expect(calculateTipPercent(50, 1)).toEqual(2);
 	});
 
-	it('should append a cell to the table', function() {
+	it('should append a cell to the table', () => {
 		let newTr = document.createElement('tr');
 
 		appendTd(newTr, '$' + 50);
@@ -44,7 +44,7 @@ describe('Helpers test', function() {
 		expect(newTr.firstChild.innerText).toEqual('$50');
 	});
 
-	afterEach(function() {
+	afterEach(() => {
 		allPayments = {};
 		newTr = '';
 	});
